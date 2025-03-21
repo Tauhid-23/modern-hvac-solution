@@ -85,7 +85,7 @@ const Navbar = () => {
               <Phone size={16} className="mr-2" />
               (800) 123-4567
             </a>
-            <AnimatedButton variant="primary" size="sm">
+            <AnimatedButton variant="primary" size="sm" href="/contact">
               Get Quote
             </AnimatedButton>
           </div>
@@ -138,6 +138,7 @@ const Navbar = () => {
             <AnimatedButton
               variant="primary"
               className="w-full justify-center"
+              href="/contact"
               onClick={closeMenu}
             >
               Get Quote

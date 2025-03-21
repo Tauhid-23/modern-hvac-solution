@@ -107,7 +107,7 @@ const Services = ({ className }: ServicesProps) => {
         </div>
 
         <div className="text-center mt-12">
-          <AnimatedButton variant="primary" size="lg">
+          <AnimatedButton variant="primary" size="lg" href="/services">
             View All Services
           </AnimatedButton>
         </div>

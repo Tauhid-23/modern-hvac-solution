@@ -61,7 +61,7 @@ const ServiceCard = ({
       </div>
       <h3 className="mb-2 text-xl font-bold">{title}</h3>
       <p className="mb-4 text-muted-foreground">{description}</p>
-      <AnimatedButton variant="ghost" size="sm" className="px-0 text-hvac-blue">
+      <AnimatedButton variant="ghost" size="sm" className="px-0 text-hvac-blue" href={link}>
         Learn more
       </AnimatedButton>
     </div>
