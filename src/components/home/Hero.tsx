@@ -10,7 +10,6 @@ interface HeroProps {
 
 const Hero = ({ className }: HeroProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isMobile = useIsMobile();
@@ -29,9 +28,6 @@ const Hero = ({ className }: HeroProps) => {
 
     if (heroRef.current) {
       observer.observe(heroRef.current);
-    }
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
     }
     if (contentRef.current) {
       observer.observe(contentRef.current);
@@ -86,9 +82,9 @@ const Hero = ({ className }: HeroProps) => {
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-hvac-blue/10 rounded-full translate-y-1/2 -translate-x-1/3 blur-3xl opacity-30 z-0" />
 
       <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16">
-          {/* Left column - Content */}
-          <div ref={contentRef} className="fade-up max-w-xl">
+        <div className="grid grid-cols-1 gap-12 items-center py-16">
+          {/* Content - now centered */}
+          <div ref={contentRef} className="fade-up max-w-xl mx-auto text-center">
             <div className="inline-flex items-center px-3 py-1 mb-6 text-sm font-medium rounded-full bg-hvac-blue/10 text-white backdrop-blur-sm">
               <span className="mr-2">Professional HVAC Services</span>
               <ArrowRight size={14} />
@@ -102,7 +98,7 @@ const Hero = ({ className }: HeroProps) => {
               energy-efficient HVAC services tailored to your needs.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
               <AnimatedButton variant="primary" size="lg" href="/contact">
                 Schedule Service
               </AnimatedButton>
@@ -111,7 +107,7 @@ const Hero = ({ className }: HeroProps) => {
               </AnimatedButton>
             </div>
 
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap justify-center gap-6">
               {trustBadges.map((badge, index) => (
                 <div
                   key={index}
@@ -127,40 +123,6 @@ const Hero = ({ className }: HeroProps) => {
                   </span>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Right column - Image */}
-          <div
-            ref={imageRef}
-            className="fade-up relative lg:h-[600px] flex items-center justify-center"
-            style={{ transitionDelay: "0.3s" }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-hvac-blue/10 to-transparent rounded-3xl backdrop-blur-sm" />
-            <div className="relative p-2 w-full max-w-lg">
-              <div className="relative overflow-hidden rounded-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1614605858674-52ecee6d17b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&h=1200&q=80"
-                  alt="HVAC Technician servicing an air conditioning unit"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
-                  <div className="glass-card rounded-lg p-4 backdrop-blur-md bg-white/20 border border-white/20">
-                    <div className="flex items-center mb-2">
-                      <div className="flex text-yellow-400">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={16} fill="currentColor" />
-                        ))}
-                      </div>
-                      <span className="ml-2 text-white font-medium">4.9 (580+ reviews)</span>
-                    </div>
-                    <p className="text-white text-sm">
-                      "The technicians were professional, efficient, and clearly explained everything.
-                      My new AC system works perfectly!"
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
