@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from "react";
-import { Thermometer, Snowflake, Wind, Tools, AreaChart, Shield, ArrowRight } from "lucide-react";
+import { Thermometer, Snowflake, Wind, Wrench, AreaChart, Shield, ArrowRight } from "lucide-react";
 import ServiceCard from "../ui/ServiceCard";
 import AnimatedButton from "../ui/AnimatedButton";
 import { cn } from "@/lib/utils";
@@ -29,7 +29,7 @@ const services = [
     link: "/services#air-quality",
   },
   {
-    icon: Tools,
+    icon: Wrench,
     title: "HVAC Maintenance",
     description: "Regular maintenance to prevent issues, extend system life, and improve efficiency.",
     link: "/services#maintenance",
